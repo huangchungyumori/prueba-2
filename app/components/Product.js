@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Modal from './Modal'
 
 const Product = ({ name, imageUrl, price }) => {
+    const [showModal, setShowModal] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [value, setValue] = useState('')
 
@@ -14,6 +15,10 @@ const Product = ({ name, imageUrl, price }) => {
   const handleModalClose = () => {
     setIsModalOpen(false)
   }
+
+  const handleClick = () => {
+    setShowModal(true);
+  };
 
   const handleInputChange = (event) => {
     setValue(event.target.value)
@@ -31,7 +36,7 @@ const Product = ({ name, imageUrl, price }) => {
         <img className="w-full h-auto" src={imageUrl} alt={name} onClick={handleModalOpen} />
         <div className="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-75 flex items-center justify-between">
           <span className="font-bold">{price}</span>
-          <button className="text-blue-500" onClick={handleModalOpen}>Ver</button>
+          {/* <button className="text-blue-500" onClick={handleModalOpen}>Ver</button> */}
         </div>
       </div>
       <div className="flex items-center mt-4">
@@ -43,7 +48,9 @@ const Product = ({ name, imageUrl, price }) => {
         </button>
       </div>
       {isModalOpen && (
-        <Modal imageUrl={imageUrl} onClose={handleModalClose} />
+        <Modal onClose={() => setShowModal(false)}>
+        <img src={imageUrl} alt={name} />
+      </Modal>
       )}
     </div>
   )
