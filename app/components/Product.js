@@ -33,6 +33,7 @@ const Product = ({ name, imageUrl, price }) => {
   return (
     <div className="w-full md:w-1/2 lg:w-1/3 px-4 mb-4">
       <div className="relative overflow-hidden">
+        <div>Title</div>
         <img className="w-full h-auto" src={imageUrl} alt={name}/>
         <div className="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-75 flex items-center justify-between">
           <span className="font-bold">{price}</span>

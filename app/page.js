@@ -7,17 +7,20 @@ const products = [
   {
     name: 'Producto 1',
     imageUrl: 'https://via.placeholder.com/300x300',
-    price: '$10'
+    price: '$10',
+    title: 'Producto 1'
   },
   {
     name: 'Producto 2',
     imageUrl: 'https://via.placeholder.com/300x300',
-    price: '$20'
+    price: '$20',
+    title: 'Producto 2'
   },
   {
     name: 'Producto 3',
     imageUrl: 'https://via.placeholder.com/300x300',
-    price: '$30'
+    price: '$30',
+    title: 'Producto 3'
   },
 ]
 
