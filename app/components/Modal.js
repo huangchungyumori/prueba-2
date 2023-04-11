@@ -1,15 +1,28 @@
-import ReactDOM from 'react-dom'
+import React, { useRef } from "react";
 
-const Modal = ({ imageUrl, name, onClose }) => {
-  return ReactDOM.createPortal(
-    <div className="fixed top-0 left-0 right-0 bottom-0 z-50 flex items-center justify-center">
-      <div className="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-75" onClick={onClose}></div>
+const Modal = ({ onClose, children }) => {
+  const modalRef = useRef();
+
+  const handleBackgroundClick = (event) => {
+    if (event.target === modalRef.current) {
+      onClose();
+    }
+  };
+
+  return (
+    <div
+      className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50"
+      onClick={handleBackgroundClick}
+      ref={modalRef}
+    >
       <div className="bg-white p-4 rounded-lg">
-        <img className="w-full h-auto" src={imageUrl} alt={name} />
+        <button className="absolute top-0 right-0 p-2" onClick={onClose}>
+          X
+        </button>
+        {children}
       </div>
-    </div>,
-    document.getElementById('modal-root')
-  )
-}
+    </div>
+  );
+};
 
 export default Modal;
