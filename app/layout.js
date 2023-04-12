@@ -11,7 +11,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         {children}
-        <LandingPage/>
+        {/* <LandingPage/> */}
         </body>
     </html>
   )
