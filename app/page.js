@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-const productos = [
+const items = [
   {
     id: 1,
     nombre: 'AirFryer',
@@ -119,7 +119,7 @@ const productos = [
 export default function Productos() {
     return (
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {productos.map((producto) => (
+        {items.map((producto) => (
           <div key={producto.id} className="bg-white shadow rounded-lg overflow-hidden">
             <div className="relative pb-2/3">
               <Image
