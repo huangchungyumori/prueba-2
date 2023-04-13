@@ -125,7 +125,7 @@ export default function Productos() {
               <Image
                 src={producto.imagen}
                 alt={producto.nombre}
-                width={300}
+                width={500}
                 height={300}
               />
             </div>
