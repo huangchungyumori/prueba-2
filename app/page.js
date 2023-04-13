@@ -60,7 +60,7 @@ const productos = [
   },
   {
     id: 9,
-    nombre: 'LACK coffe table-90x55 ',
+    nombre: 'LACK coffe table-90x55',
     imagen: '/images/Product09.jpg',
     precioOriginal: 6.9,
     precio: 4,
